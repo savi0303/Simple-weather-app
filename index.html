@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <h1 class="header-title">Weather Today!</h1>
+        <p class="header-tagline">Your trusted weather companion</p>
+    </header>
     <div class="container">
         <div class="search-box">
             <input type="text" id="city-input" placeholder="Enter city name">
@@ -33,8 +38,12 @@
                 </div>
             </div>
             <p id="error-message" class="error"></p>
+            <div id="loading" class="loading-spinner"></div>
         </div>
     </div>
+    <footer>
+        <p>Designed by <a href="https://my-portfolio-kappa-ochre.vercel.app/" target="_blank">Savindu Weththasinghe</a> | Designed with ❤️</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

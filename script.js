@@ -19,18 +19,30 @@ document.getElementById('city-input').addEventListener('keypress', (e) => {
 });
 
 async function getWeather(city) {
+    const loadingSpinner = document.getElementById('loading');
+    const weatherInfo = document.getElementById('weather-info');
+    const errorMessage = document.getElementById('error-message');
+
+    // Show loading spinner and hide weather info
+    loadingSpinner.style.display = 'block';
+    weatherInfo.style.display = 'block';
+    errorMessage.style.display = 'none';
+
     try {
         const response = await fetch(`${apiUrl}?q=${city}&appid=${apiKey}&units=metric`);
         const data = await response.json();
 
         if (response.ok) {
             displayWeather(data);
-            document.getElementById('error-message').style.display = 'none';
+            errorMessage.style.display = 'none';
         } else {
             throw new Error(data.message || 'City not found');
         }
     } catch (error) {
         showError(error.message);
+    } finally {
+        // Hide loading spinner after the request completes
+        loadingSpinner.style.display = 'none';
     }
 }
 
