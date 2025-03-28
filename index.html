@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="particle-canvas"></canvas>
     <header>
         <h1 class="header-title">Weather Today!</h1>
         <p class="header-tagline">Your trusted weather companion</p>
@@ -15,29 +16,29 @@
     <div class="container">
         <div class="search-box">
             <input type="text" id="city-input" placeholder="Enter city name">
-            <button id="search-btn">Search</button>
+            <button id="search-btn" class="search-btn">Search</button>
         </div>
         
         <div class="weather-info" id="weather-info">
-            <h2 id="city-name"></h2>
+            <h2 id="city-name" class="animate-element"></h2>
             <div class="weather-main">
-                <img id="weather-icon" src="images/weather-icon.png" alt="Weather Icon">
+                <img id="weather-icon" class="weather-icon animate-element" src="images/weather-icon.png" alt="Weather Icon">
                 <div class="temp-info">
-                    <p id="temperature"></p>
-                    <p id="description"></p>
+                    <p id="temperature" class="animate-element"></p>
+                    <p id="description" class="animate-element"></p>
                 </div>
             </div>
             <div class="weather-details">
-                <div class="detail">
+                <div class="detail animate-element">
                     <span>Humidity</span>
                     <p id="humidity"></p>
                 </div>
-                <div class="detail">
+                <div class="detail animate-element">
                     <span>Wind Speed</span>
                     <p id="wind-speed"></p>
                 </div>
             </div>
-            <p id="error-message" class="error"></p>
+            <p id="error-message" class="error animate-element"></p>
             <div id="loading" class="loading-spinner"></div>
         </div>
     </div>
