@@ -1,4 +1,4 @@
-const apiKey = '636017c33a211815710a1c5179d690d1'; // Replace with your OpenWeatherMap API key
+const apiKey = '636017c33a211815710a1c5179d690d1'; // Your OpenWeatherMap API key
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 document.getElementById('search-btn').addEventListener('click', () => {
@@ -68,9 +68,16 @@ function displayWeather(data) {
             iconSrc = 'images/drizzle.png';
             break;
         default:
-            iconSrc = 'images/cloud.png';
+            iconSrc = 'images/clouds.png'; // Default to clouds.png for unhandled conditions
     }
-    document.getElementById('weather-icon').src = iconSrc;
+
+    const weatherIcon = document.getElementById('weather-icon');
+    weatherIcon.src = iconSrc;
+    weatherIcon.alt = `Weather Icon: ${data.weather[0].description}`; // Dynamic alt text for accessibility
+
+    // Debug: Log the weather condition and icon path
+    console.log('Weather condition:', weatherCondition);
+    console.log('Icon set to:', iconSrc);
 }
 
 function showError(message) {
@@ -84,5 +91,8 @@ function showError(message) {
     document.getElementById('description').textContent = '';
     document.getElementById('humidity').textContent = '';
     document.getElementById('wind-speed').textContent = '';
-    document.getElementById('weather-icon').src = '';
+    // Reset the weather icon to the default
+    const weatherIcon = document.getElementById('weather-icon');
+    weatherIcon.src = 'images/weather-icon.png';
+    weatherIcon.alt = 'Weather Icon';
 }
