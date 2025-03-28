@@ -1,4 +1,4 @@
-const apiKey = '636017c33a211815710a1c5179d690d1'; // Your OpenWeatherMap API key
+const apiKey = 'your api'; // Your OpenWeatherMap API key
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Particle Background Animation
